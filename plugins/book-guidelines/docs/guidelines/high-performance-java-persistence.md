@@ -42,6 +42,8 @@ Before merging any code that adds or changes a query path, know:
 - MUST NOT use `Statement`/string-concatenated SQL for anything with a variable input —
   bind parameters, always.
 
+---
+
 ## Fetching: the N+1 rule
 
 - MUST NOT let an association load lazily inside a loop. If a collection or `@ManyToOne`
@@ -62,6 +64,8 @@ Before merging any code that adds or changes a query path, know:
   for read-only views that don't need managed-entity behavior — do not load full entity
   graphs to render a list or a report.
 
+---
+
 ## Entity Identity & Equality
 
 - MUST implement `equals`/`hashCode` based on a business key (a natural, immutable key)
@@ -74,6 +78,8 @@ Before merging any code that adds or changes a query path, know:
   infinitely on bidirectional associations.
 - SHOULD prefer `@NaturalId` for the stable business key when one exists, and use
   `Session#byNaturalId` for lookups that would otherwise be a `WHERE` query on that key.
+
+---
 
 ## Managing State: Transactions & the Persistence Context
 
@@ -95,6 +101,8 @@ Before merging any code that adds or changes a query path, know:
   optimistic-lock failure (e.g. sequence/counter allocation) — it blocks readers and
   does not scale like optimistic locking does.
 
+---
+
 ## Batching
 
 - MUST enable `hibernate.jdbc.batch_size` (and `order_inserts`/`order_updates`) for any
@@ -109,6 +117,8 @@ Before merging any code that adds or changes a query path, know:
   rather than holding thousands of managed entities in one persistence context —
   periodically `flush()` + `clear()` when doing bulk imports.
 
+---
+
 ## Query Shape
 
 - MUST use JPQL/Criteria/native SQL — whichever produces the smallest, most explicit
@@ -122,6 +132,8 @@ Before merging any code that adds or changes a query path, know:
 - SHOULD use native SQL or a projection DTO for reporting/analytics queries instead of
   contorting JPQL/Criteria to express aggregations the ORM isn't built for.
 
+---
+
 ## Associations & Cascading
 
 - MUST NOT cascade `REMOVE` across an association unless the child truly cannot exist
@@ -132,6 +144,8 @@ Before merging any code that adds or changes a query path, know:
 - MUST mark the non-owning side of a bidirectional `@OneToMany`/`@ManyToOne` with
   `mappedBy` — do not let both sides independently manage the foreign key, which
   produces redundant `UPDATE` statements.
+
+---
 
 ## Caching
 
@@ -158,3 +172,16 @@ When reviewing or writing code touching Hibernate/JPA/Panache entities, verify:
       defeated by `GenerationType.IDENTITY`
 - [ ] Pagination happens in SQL, not in Java after a full load
 - [ ] Bidirectional associations are kept consistent via owning-side helper methods
+
+---
+
+## Final Instruction
+
+When uncertain, prefer the mapping or query shape that:
+1. issues the fewest, most predictable SQL statements
+2. scopes write access and locking to what the use case actually needs
+3. returns a projection instead of a full entity graph when read-only data is enough
+4. keeps identity, equality, and versioning correct under concurrent access
+5. lets the generated SQL, not the Java code, decide whether the design is fast enough
+
+Every mapping is a SQL-generation decision. Treat it like one.

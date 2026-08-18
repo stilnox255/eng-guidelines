@@ -201,6 +201,22 @@ Avoid by default:
 
 ---
 
+## Review Checklist
+
+Before finalizing any change, verify:
+- Did this change produce faster or higher-quality feedback than before?
+- Could this have shipped as a smaller, safer, reversible step?
+- Is the change framed as a hypothesis with an observable, measured outcome?
+- Does each module boundary hide a decision that is likely to change?
+- Is cohesion high, with unrelated concerns kept apart?
+- Did we reduce coupling, or at least avoid adding accidental coupling?
+- Is the change easy to test, with tests that specify behavior rather than implementation?
+- Does the system remain deployable, and is the build green?
+
+If any answer is no, revise before shipping.
+
+---
+
 ## Final Instruction
 
 When uncertain, prefer the design that:

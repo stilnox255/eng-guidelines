@@ -1,6 +1,6 @@
 {
   "name": "book-guidelines",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Book-derived engineering guidelines (Clean Code, Clean Architecture, PoEAA, HPJP, Modern Software Engineering, Philosophy of Software Design) plus PR-review/prototyping/behavioral skills, shared across all of Ingo's projects instead of copy-pasted per scaffold.",
   "author": {
     "name": "Ingo Schindler"

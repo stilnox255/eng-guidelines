@@ -55,11 +55,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## Deliberately not included: `quarkus-panache-smells`
+## Not included here: `quarkus-panache-smells`
 
-Sourced (per `demo`'s `skills-lock.json`) from `emvnuel/skill.md`, path
-`quarkus-panache/SKILL.md`. That repo has **no LICENSE file and no license mention in
-its README** — under default copyright, that means all rights reserved, no
-redistribution permission granted. It stays local to `demo` (`.agents/skills/`), used
-there only, not vendored into this public marketplace. Revisit if the author adds a
-license or grants permission directly.
+Sourced from `emvnuel/skill.md`, path `quarkus-panache/SKILL.md`. That repo has **no
+LICENSE file and no license mention anywhere in it** — under default copyright, no
+redistribution permission granted. It lives in its own `quarkus-panache-smells`
+plugin instead, marked restricted/private-repo-only, kept separate from this
+MIT-licensed pair so the two license situations never get mixed up in one manifest.
+Revisit merging them if the author adds a license or grants permission directly.

@@ -4,6 +4,11 @@ Claude Code plugin marketplace for engineering skills that don't belong to any s
 project — a personal catalog, installed once per machine and shared with the team via
 this repo, instead of copy-pasted into every project scaffold.
 
+**This repo is currently private, on purpose.** One plugin
+(`quarkus-panache-smells`) only belongs here because of that — see its entry below
+and its `ATTRIBUTION.md` before ever making this repo public or sharing access
+beyond Ingo.
+
 ## Plugins
 
 - **`book-guidelines`** — book-derived guidelines (Clean Code, Clean Architecture,
@@ -32,10 +37,14 @@ this repo, instead of copy-pasted into every project scaffold.
   for real, same tradeoff `book-guidelines` already made for its ciembor-sourced
   content.
 
-  **Not included:** `quarkus-panache-smells`. Its source (`emvnuel/skill.md`) has no
-  LICENSE file and no license mention anywhere in the repo — default copyright, no
-  redistribution permission. Stays local to `demo`'s `.agents/skills/`, used there
-  only. Revisit if the author licenses it or grants permission directly.
+- **`quarkus-panache-smells`** — **RESTRICTED LICENSE, private-repo-only.** Source
+  (`emvnuel/skill.md`) has no LICENSE file and no license mention anywhere in the
+  repo — default copyright, no redistribution permission. An issue is open asking
+  the author to add one. Kept here as personal use only while this repo stays
+  private, in its own plugin so it's never accidentally bundled with the
+  MIT-licensed `quarkus-tooling` pair. **Remove this plugin before this repo is ever
+  made public or shared**, unless the license question is resolved by then. See
+  `plugins/quarkus-panache-smells/ATTRIBUTION.md`.
 
 All extracted from the `demo` scaffold repo — none of it carried a dependency on that
 project's domain, so all of it was duplicated dead weight in every project scaffolded
@@ -50,6 +59,7 @@ record *that* a project adopted a convention, not the convention itself.
 /plugin install epic-workflow@ingo-eng-guidelines
 /plugin install architecture@ingo-eng-guidelines
 /plugin install quarkus-tooling@ingo-eng-guidelines
+/plugin install quarkus-panache-smells@ingo-eng-guidelines   # private-repo-only, see above
 ```
 
 Team members repeat the same commands once; updates then arrive via `git pull` on the
@@ -71,6 +81,9 @@ plugins/
   quarkus-tooling/
     skills/<name>/SKILL.md
     ATTRIBUTION.md
+  quarkus-panache-smells/
+    skills/quarkus-panache-smells/SKILL.md
+    ATTRIBUTION.md            — restricted license, private-repo-only
 ```
 
 Adding a plugin: new folder under `plugins/`, its own `.claude-plugin/plugin.json`, and

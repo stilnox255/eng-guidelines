@@ -1,7 +1,7 @@
 {
   "name": "book-guidelines",
-  "version": "0.3.0",
-  "description": "Book-derived engineering guidelines (Clean Code, Clean Architecture, PoEAA, HPJP, Modern Software Engineering, Philosophy of Software Design) plus PR-review/prototyping/behavioral skills, shared across all of Ingo's projects instead of copy-pasted per scaffold. Release It! and the stack-agnostic core of Use the Platform are injected at every session start via a hook; stack-specific Use the Platform companions (JVM, browser, ...) trigger contextually like the other book skills.",
+  "version": "0.4.0",
+  "description": "Book-derived engineering guidelines (Clean Code, Clean Architecture, PoEAA, HPJP, Modern Software Engineering, Philosophy of Software Design) plus PR-review/prototyping/behavioral skills, shared across all of Ingo's projects instead of copy-pasted per scaffold. Release It! and the stack-agnostic core of Use the Platform are injected at every session start via a hook; stack-specific Use the Platform companions (JVM, browser, Node.js, PHP) trigger contextually like the other book skills.",
   "author": {
     "name": "Ingo Schindler"
   },

@@ -43,7 +43,8 @@ Before writing code, adding a dependency, or inventing a mechanism, answer in th
 
 - You MUST check the language/runtime standard library before reaching for a third-party
   package — see the stack-specific companion (`use-the-platform-jvm.md`,
-  `use-the-platform-browser.md`, ...) for the concrete list.
+  `use-the-platform-browser.md`, `use-the-platform-node.md`, `use-the-platform-php.md`)
+  for the concrete list.
 - You MUST use the capability the framework already provides rather than a parallel one:
   dependency injection, configuration, validation, timeouts/retries, serialization —
   whatever the framework in play already ships for that concern.

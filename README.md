@@ -22,15 +22,25 @@ this repo, instead of copy-pasted into every project scaffold.
   inlined in the skill, so the ADR link was just a rationale pointer, not the content
   itself — removed so the skill carries no project-specific link.
 
-All three extracted from the `demo` scaffold repo — none of it carried a dependency on
-that project's domain, so all of it was duplicated dead weight in every project
-scaffolded from it. A project's own ADRs (like `demo`'s `ADR-14`) stay where they are;
-they record *that* a project adopted a convention, not the convention itself.
+- **`quarkus-tooling`** — vendored third-party `quarkus` and `keycloak-administration`
+  skills, MIT-licensed (see `plugins/quarkus-tooling/ATTRIBUTION.md`). Previously
+  tracked per-project by a skill installer (`skills-lock.json` + `.agents/skills/` in
+  `demo`, with a source repo + content hash per skill) — that gave drift detection in
+  theory, but the actual installer CLI could never be confirmed running (silent no-op
+  in every environment tried), so the "reproducible install" property was already
+  theoretical. Vendoring here at least gets the "install once, every project" property
+  for real, same tradeoff `book-guidelines` already made for its ciembor-sourced
+  content.
 
-Deliberately excludes `quarkus`, `quarkus-panache-smells`, `keycloak-administration`:
-those are already tracked per-project by a skill installer (`skills-lock.json` +
-`.agents/skills/`, symlinked into `.claude/skills/`), with their own GitHub source and
-hash per skill. Forking them in here would fork that provenance/update path too.
+  **Not included:** `quarkus-panache-smells`. Its source (`emvnuel/skill.md`) has no
+  LICENSE file and no license mention anywhere in the repo — default copyright, no
+  redistribution permission. Stays local to `demo`'s `.agents/skills/`, used there
+  only. Revisit if the author licenses it or grants permission directly.
+
+All extracted from the `demo` scaffold repo — none of it carried a dependency on that
+project's domain, so all of it was duplicated dead weight in every project scaffolded
+from it. A project's own ADRs (like `demo`'s `ADR-14`) stay where they are; they
+record *that* a project adopted a convention, not the convention itself.
 
 ## Install
 
@@ -39,6 +49,7 @@ hash per skill. Forking them in here would fork that provenance/update path too.
 /plugin install book-guidelines@ingo-eng-guidelines
 /plugin install epic-workflow@ingo-eng-guidelines
 /plugin install architecture@ingo-eng-guidelines
+/plugin install quarkus-tooling@ingo-eng-guidelines
 ```
 
 Team members repeat the same commands once; updates then arrive via `git pull` on the
@@ -57,6 +68,9 @@ plugins/
     skills/<name>/SKILL.md
   architecture/
     skills/<name>/SKILL.md
+  quarkus-tooling/
+    skills/<name>/SKILL.md
+    ATTRIBUTION.md
 ```
 
 Adding a plugin: new folder under `plugins/`, its own `.claude-plugin/plugin.json`, and

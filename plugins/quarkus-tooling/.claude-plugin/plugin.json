@@ -1,0 +1,8 @@
+{
+  "name": "quarkus-tooling",
+  "version": "0.1.0",
+  "description": "Vendored third-party Quarkus and Keycloak-administration skills, MIT-licensed, installed once instead of copy-pasted per project.",
+  "author": {
+    "name": "Ingo Schindler"
+  }
+}

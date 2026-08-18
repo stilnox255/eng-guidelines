@@ -23,6 +23,12 @@
       "description": "Backend (Hexagonal Architecture, one class per use case) and frontend (web-components, BCE) architecture doctrine — the standard Ingo starts every project from, with no remaining links into any one project's own docs.",
       "source": "./plugins/architecture",
       "category": "productivity"
+    },
+    {
+      "name": "quarkus-tooling",
+      "description": "Vendored third-party Quarkus and Keycloak-administration skills (MIT-licensed), installed once instead of copy-pasted per project.",
+      "source": "./plugins/quarkus-tooling",
+      "category": "productivity"
     }
   ]
 }

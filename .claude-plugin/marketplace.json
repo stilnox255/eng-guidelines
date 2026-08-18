@@ -7,9 +7,15 @@
   },
   "plugins": [
     {
-      "name": "eng-guidelines",
+      "name": "book-guidelines",
       "description": "Book-derived engineering guidelines (Clean Code, Clean Architecture, PoEAA, HPJP, Modern Software Engineering, Philosophy of Software Design) plus PR-review/prototyping/behavioral skills — none of it tied to a specific project's domain.",
-      "source": "./",
+      "source": "./plugins/book-guidelines",
+      "category": "productivity"
+    },
+    {
+      "name": "epic-workflow",
+      "description": "Idea capture through epic definition, planning, and task execution, with GitHub Projects V2 sync — parameterized per project via its own CLAUDE.md, not tied to any one project's domain.",
+      "source": "./plugins/epic-workflow",
       "category": "productivity"
     }
   ]

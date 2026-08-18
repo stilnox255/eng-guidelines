@@ -1,8 +1,9 @@
 # Attribution
 
 `docs/guidelines/clean-code.md`, `docs/guidelines/clean-architecture.md`,
-`docs/guidelines/a-philosophy-of-software-design.md`, and
-`docs/guidelines/patterns-of-enterprise-application-architecture.md` are adapted from
+`docs/guidelines/a-philosophy-of-software-design.md`,
+`docs/guidelines/patterns-of-enterprise-application-architecture.md`, and
+`docs/guidelines/release-it.md` are adapted from
 [ciembor/agent-rules-books](https://github.com/ciembor/agent-rules-books), MIT License:
 
 ```
@@ -29,6 +30,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-`docs/guidelines/modern-software-engineering.md` and
-`docs/guidelines/high-performance-java-persistence.md` are written by Ingo Schindler,
+`docs/guidelines/modern-software-engineering.md`,
+`docs/guidelines/high-performance-java-persistence.md`, and
+`docs/guidelines/use-the-platform.md` are written by Ingo Schindler, the latter two
 following the same skill-wrapper pattern as the files above.

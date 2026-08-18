@@ -1,0 +1,8 @@
+{
+  "name": "architecture",
+  "version": "0.1.0",
+  "description": "Ingo's backend (Hexagonal Architecture, one class per use case) and frontend (web-components, BCE) architecture doctrine — the standard he starts every project from.",
+  "author": {
+    "name": "Ingo Schindler"
+  }
+}

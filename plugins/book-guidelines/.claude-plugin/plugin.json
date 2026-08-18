@@ -1,8 +1,9 @@
 {
   "name": "book-guidelines",
-  "version": "0.1.1",
-  "description": "Book-derived engineering guidelines (Clean Code, Clean Architecture, PoEAA, HPJP, Modern Software Engineering, Philosophy of Software Design) plus PR-review/prototyping/behavioral skills, shared across all of Ingo's projects instead of copy-pasted per scaffold.",
+  "version": "0.2.0",
+  "description": "Book-derived engineering guidelines (Clean Code, Clean Architecture, PoEAA, HPJP, Modern Software Engineering, Philosophy of Software Design) plus PR-review/prototyping/behavioral skills, shared across all of Ingo's projects instead of copy-pasted per scaffold. Release It! and Use the Platform are injected at every session start via a hook, not just triggered contextually.",
   "author": {
     "name": "Ingo Schindler"
-  }
+  },
+  "hooks": "./hooks/hooks.json"
 }

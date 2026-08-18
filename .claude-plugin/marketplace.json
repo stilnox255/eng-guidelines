@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ingo-eng-guidelines",
+  "description": "Ingo Schindler's reusable engineering guideline skills shared across projects.",
+  "owner": {
+    "name": "Ingo Schindler"
+  },
+  "plugins": [
+    {
+      "name": "eng-guidelines",
+      "description": "Book-derived engineering guidelines (Clean Code, Clean Architecture, PoEAA, HPJP, Modern Software Engineering, Philosophy of Software Design) plus PR-review/prototyping/behavioral skills — none of it tied to a specific project's domain.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

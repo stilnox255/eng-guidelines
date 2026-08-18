@@ -1,0 +1,8 @@
+{
+  "name": "eng-guidelines",
+  "version": "0.1.0",
+  "description": "Book-derived engineering guidelines and generic JVM/Quarkus/ops skills, shared across all of Ingo's projects instead of copy-pasted per scaffold.",
+  "author": {
+    "name": "Ingo Schindler"
+  }
+}

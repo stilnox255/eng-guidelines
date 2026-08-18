@@ -2,13 +2,14 @@
 
 ## Purpose
 
-The runtime this project already ships on is the default toolbox: the JDK, Jakarta EE /
-MicroProfile, Quarkus, and in the browser HTML, CSS and JavaScript as the standards define
-them. New code, new dependencies and new mechanisms are justified only where that toolbox
-genuinely does not cover the need.
+The language runtime and standard library a project already ships on — plus whatever
+mechanism its framework already provides for wiring, config, validation, and I/O — is the
+default toolbox. New code, new dependencies and new mechanisms are justified only where
+that toolbox genuinely does not cover the need.
 
 This file is a binding engineering policy: `MUST` is binding, `SHOULD` is a strong default,
-and `MUST NOT` is forbidden.
+and `MUST NOT` is forbidden. It is stack-agnostic; a companion file names the concrete APIs
+for the stack in play (JVM, browser, ...) and applies alongside it.
 
 ---
 
@@ -16,8 +17,8 @@ and `MUST NOT` is forbidden.
 
 Before writing code, adding a dependency, or inventing a mechanism, answer in this order:
 
-1. Does the platform already do this?
-2. Does something already on this project's classpath or in `package.json` already do this?
+1. Does the language or runtime standard library already do this?
+2. Does something already in this project's dependency manifest already do this?
 3. Is there an established, named pattern for this problem?
 4. Only then write something new, and state why the first three did not fit.
 
@@ -40,19 +41,15 @@ Before writing code, adding a dependency, or inventing a mechanism, answer in th
 
 ## Platform First
 
-- You MUST check the JDK before reaching for a library. `BigDecimal`, `java.time`,
-  `HexFormat`, `MessageDigest`, `HttpClient`, `Objects`, `Comparator`, `EnumMap` / `EnumSet`,
-  the `Collectors` family and `String.formatted` cover most of what utility libraries are
-  pulled in for.
-- In the browser you MUST prefer web standards: custom elements, `<template>`, `<dialog>`,
-  CSS custom properties, nesting, `:has()`, container queries, `fetch`, `AbortController`,
-  `URL` / `URLSearchParams`, `Intl`, `structuredClone`.
+- You MUST check the language/runtime standard library before reaching for a third-party
+  package — see the stack-specific companion (`use-the-platform-jvm.md`,
+  `use-the-platform-browser.md`, ...) for the concrete list.
 - You MUST use the capability the framework already provides rather than a parallel one:
-  CDI for wiring, MicroProfile Config for configuration, MicroProfile Fault Tolerance for
-  timeouts and retries, Bean Validation for input constraints, JSON-P / JSON-B for JSON.
-- A helper that reimplements `String.join`, ISO-8601 parsing, or hex encoding MUST be
-  replaced by the platform call. The duplicate carries its own bugs and its own upgrade
-  cost for no gain.
+  dependency injection, configuration, validation, timeouts/retries, serialization —
+  whatever the framework in play already ships for that concern.
+- A helper that reimplements a standard-library primitive (string joining, date parsing,
+  hex encoding, ...) MUST be replaced by the platform call. The duplicate carries its own
+  bugs and its own upgrade cost for no gain.
 
 ## The Bar for a New Dependency
 
@@ -60,8 +57,9 @@ Before writing code, adding a dependency, or inventing a mechanism, answer in th
 - A new dependency MUST clear all of: it solves something the platform genuinely does not,
   it is maintained, its license fits, and the value of the part actually used outweighs the
   transitive cost, the CVE surface and the upgrade burden.
-- Adding one MUST be raised explicitly before it lands in `build.gradle` or `package.json`,
-  with the alternative that was rejected.
+- Adding one MUST be raised explicitly before it lands in the dependency manifest
+  (`build.gradle`, `package.json`, `composer.json`, ...), with the alternative that was
+  rejected.
 
 ## Established Patterns Over Invention
 
@@ -99,8 +97,7 @@ Before writing code, adding a dependency, or inventing a mechanism, answer in th
 - If a single method needs more than a couple of stubbed collaborators, it is doing more
   than one thing. Split it.
 - You SHOULD keep decisions pure and push I/O to the edges, so the interesting logic is
-  testable with plain values and no test doubles at all. The hexagonal layering in
-  `ADR-01` exists to make that the easy path.
+  testable with plain values and no test doubles at all.
 
 ---
 
@@ -109,7 +106,8 @@ Before writing code, adding a dependency, or inventing a mechanism, answer in th
 Before finalizing any change, verify:
 
 - Would a new team member follow this on first read, without a walkthrough?
-- Does anything here reimplement something the JDK, the browser, or Quarkus already ships?
+- Does anything here reimplement something the language, the browser, or the framework
+  already ships?
 - Was a dependency added, and does it clear the bar above?
 - Does this introduce a second mechanism for something the codebase already solves once?
 - Is there a named pattern for this problem that was not used, and why?

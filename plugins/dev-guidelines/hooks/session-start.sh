@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# book-guidelines — SessionStart hook: inject the two always-on engineering
+# dev-guidelines — SessionStart hook: inject the two always-on engineering
 # policies as hidden context, the same way they used to be @-imported from
 # each project's own CLAUDE.md.
 set -euo pipefail

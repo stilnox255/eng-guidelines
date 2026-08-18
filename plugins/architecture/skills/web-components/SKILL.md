@@ -7,7 +7,7 @@ Build or maintain a web component application using $ARGUMENTS. Apply all rules 
 
 ## Design System
 
-All visual decisions are documented in `DESIGN.md` in the project's frontend skill directory (e.g. `web-app/.claude/skills/frontend/DESIGN.md`). Read it before writing any CSS or HTML.
+All visual decisions are documented in `DESIGN.md` in the project's frontend skill directory (e.g. `web-app/.claude/skills/web-components/DESIGN.md`). Read it before writing any CSS or HTML.
 
 - use the design tokens defined in `:root` — never hardcode colours, radii, or spacing values
 - new components must match the visual style: glassmorphism cards, dark-first palette, system-ui font, `--radius` / `--spacing-unit` derived values

@@ -11,7 +11,7 @@ beyond Ingo.
 
 ## Plugins
 
-- **`book-guidelines`** — book-derived guidelines (Clean Code, Clean Architecture,
+- **`dev-guidelines`** — book-derived guidelines (Clean Code, Clean Architecture,
   PoEAA, High-Performance Java Persistence, Modern Software Engineering, Philosophy of
   Software Design, Release It!) plus generic PR-review/prototyping/behavioral skills.
   `release-it.md` and `use-the-platform.md` are injected at every session start via a
@@ -34,7 +34,7 @@ beyond Ingo.
   theory, but the actual installer CLI could never be confirmed running (silent no-op
   in every environment tried), so the "reproducible install" property was already
   theoretical. Vendoring here at least gets the "install once, every project" property
-  for real, same tradeoff `book-guidelines` already made for its ciembor-sourced
+  for real, same tradeoff `dev-guidelines` already made for its ciembor-sourced
   content.
 
 - **`quarkus-panache-smells`** — **RESTRICTED LICENSE, private-repo-only.** Source
@@ -55,7 +55,7 @@ record *that* a project adopted a convention, not the convention itself.
 
 ```
 /plugin marketplace add stilnox255/eng-guidelines
-/plugin install book-guidelines@ingo-eng-guidelines
+/plugin install dev-guidelines@ingo-eng-guidelines
 /plugin install epic-workflow@ingo-eng-guidelines
 /plugin install architecture@ingo-eng-guidelines
 /plugin install quarkus-tooling@ingo-eng-guidelines
@@ -69,7 +69,7 @@ marketplace, not by re-copying files into each project.
 
 ```
 plugins/
-  book-guidelines/
+  dev-guidelines/
     skills/<name>/SKILL.md
     docs/guidelines/*.md      — read via ${CLAUDE_PLUGIN_ROOT}/docs/guidelines/...
     hooks/session-start.sh    — SessionStart hook, always-on injection

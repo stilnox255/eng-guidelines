@@ -29,12 +29,6 @@
       "description": "Vendored third-party Quarkus and Keycloak-administration skills (MIT-licensed), installed once instead of copy-pasted per project.",
       "source": "./plugins/quarkus-tooling",
       "category": "productivity"
-    },
-    {
-      "name": "quarkus-panache-smells",
-      "description": "RESTRICTED LICENSE, private-repo-only - see plugins/quarkus-panache-smells/ATTRIBUTION.md. Remove before this marketplace is ever shared or made public.",
-      "source": "./plugins/quarkus-panache-smells",
-      "category": "productivity"
     }
   ]
 }

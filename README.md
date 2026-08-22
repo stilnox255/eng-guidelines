@@ -43,6 +43,37 @@ keeps its own license and attribution — see `ATTRIBUTION.md` at the root and i
 Team members repeat the same commands once; updates then arrive via `git pull` on the
 marketplace, not by re-copying files into each project.
 
+## Recommended companions
+
+Two marketplaces worth installing alongside this one. They are recommendations rather
+than entries in this marketplace on purpose: listing a third-party plugin here would
+mean vouching for it and shipping every upstream change to whoever installs from this
+repo. Both are better served staying where they are maintained.
+
+**[ponytail](https://github.com/DietrichGebert/ponytail)** (MIT) — forces the laziest
+solution that actually works: YAGNI, stdlib before custom code, native platform features
+before dependencies, one line before fifty. It covers roughly the half that
+`use-the-platform` deliberately leaves out. That omission was a maintenance decision, not
+a disagreement: ponytail is a far more actively maintained project than this catalog, so
+duplicating it here would only produce a fork that drifts.
+
+```
+/plugin marketplace add DietrichGebert/ponytail
+/plugin install ponytail@ponytail
+```
+
+**[emvnuel/skills](https://github.com/emvnuel/skills)** (MIT) — Jakarta EE and Quarkus
+skills: DDD, Panache smells, MapStruct, Lombok, GoF patterns, REST API design, testing
+patterns. Note the overlap before installing: `clean-code-principles`,
+`refactoring-catalog` and `cdd-design-pillars` cover ground that `dev-guidelines` already
+covers from the same books, so both can trigger on the same task. Take it for the
+Quarkus- and Jakarta-specific skills; the generic ones are duplicates.
+
+```
+/plugin marketplace add emvnuel/skills
+/plugin install skills@emvnuel-skills
+```
+
 ## Structure
 
 ```

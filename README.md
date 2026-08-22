@@ -6,7 +6,7 @@ this repo, instead of copy-pasted into every project scaffold.
 
 This repo is public and MIT-licensed (see `LICENSE`). Vendored third-party content
 keeps its own license and attribution — see `ATTRIBUTION.md` at the root and in
-`plugins/quarkus-tooling/`.
+`plugins/architecture/` and `plugins/quarkus-tooling/`.
 
 ## Plugins
 
@@ -21,7 +21,9 @@ keeps its own license and attribution — see `ATTRIBUTION.md` at the root and i
   own `CLAUDE.md` (e.g. its "GitHub Project Integration" section) — install it and it
   adapts, no edits needed here.
 - **`architecture`** — backend (Hexagonal Architecture, one class per use case) and
-  frontend (web-components, BCE) doctrine. Carries no links into any single project's
+  frontend (web-components, BCE) doctrine, adapted from Adam Bien's
+  [airails](https://github.com/AdamBien/airails) and modified here (MIT, see
+  `plugins/architecture/ATTRIBUTION.md`). Carries no links into any single project's
   own docs, so it installs anywhere unchanged.
 - **`quarkus-tooling`** — vendored third-party `quarkus` and `keycloak-administration`
   skills, MIT-licensed (see `plugins/quarkus-tooling/ATTRIBUTION.md`). Vendored rather
@@ -54,6 +56,7 @@ plugins/
     skills/<name>/SKILL.md
   architecture/
     skills/<name>/SKILL.md
+    ATTRIBUTION.md
   quarkus-tooling/
     skills/<name>/SKILL.md
     ATTRIBUTION.md

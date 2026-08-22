@@ -31,6 +31,11 @@ SOFTWARE.
 ```
 
 `docs/guidelines/modern-software-engineering.md`,
-`docs/guidelines/high-performance-java-persistence.md`, and
-`docs/guidelines/use-the-platform.md` are written by Ingo Schindler, the latter two
-following the same skill-wrapper pattern as the files above.
+`docs/guidelines/high-performance-java-persistence.md`,
+`docs/guidelines/use-the-platform.md` and its seven stack companions
+(`use-the-platform-browser.md`, `use-the-platform-dart.md`, `use-the-platform-go.md`,
+`use-the-platform-jvm.md`, `use-the-platform-node.md`, `use-the-platform-php.md`,
+`use-the-platform-python.md`) are written by Ingo Schindler. The first two follow the
+same skill-wrapper pattern as the files above; `use-the-platform` follows no book.
+
+That accounts for all fifteen files in `docs/guidelines/`.

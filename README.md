@@ -37,20 +37,6 @@ beyond Ingo.
   for real, same tradeoff `dev-guidelines` already made for its ciembor-sourced
   content.
 
-- **`quarkus-panache-smells`** — **RESTRICTED LICENSE, private-repo-only.** Source
-  (`emvnuel/skill.md`) has no LICENSE file and no license mention anywhere in the
-  repo — default copyright, no redistribution permission. An issue is open asking
-  the author to add one. Kept here as personal use only while this repo stays
-  private, in its own plugin so it's never accidentally bundled with the
-  MIT-licensed `quarkus-tooling` pair. **Remove this plugin before this repo is ever
-  made public or shared**, unless the license question is resolved by then. See
-  `plugins/quarkus-panache-smells/ATTRIBUTION.md`.
-
-All extracted from the `demo` scaffold repo — none of it carried a dependency on that
-project's domain, so all of it was duplicated dead weight in every project scaffolded
-from it. A project's own ADRs (like `demo`'s `ADR-14`) stay where they are; they
-record *that* a project adopted a convention, not the convention itself.
-
 ## Install
 
 ```

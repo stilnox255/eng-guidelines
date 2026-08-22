@@ -4,10 +4,9 @@ Claude Code plugin marketplace for engineering skills that don't belong to any s
 project — a personal catalog, installed once per machine and shared with the team via
 this repo, instead of copy-pasted into every project scaffold.
 
-**This repo is currently private, on purpose.** One plugin
-(`quarkus-panache-smells`) only belongs here because of that — see its entry below
-and its `ATTRIBUTION.md` before ever making this repo public or sharing access
-beyond Ingo.
+This repo is public and MIT-licensed (see `LICENSE`). Vendored third-party content
+keeps its own license and attribution — see `ATTRIBUTION.md` at the root and in
+`plugins/quarkus-tooling/`.
 
 ## Plugins
 
@@ -22,20 +21,12 @@ beyond Ingo.
   own `CLAUDE.md` (e.g. its "GitHub Project Integration" section) — install it and it
   adapts, no edits needed here.
 - **`architecture`** — backend (Hexagonal Architecture, one class per use case) and
-  frontend (web-components, BCE) doctrine. `backend` originally linked straight to
-  `demo`'s `ADR-14` for its exception-mapper-logging convention; that table was already
-  inlined in the skill, so the ADR link was just a rationale pointer, not the content
-  itself — removed so the skill carries no project-specific link.
-
+  frontend (web-components, BCE) doctrine. Carries no links into any single project's
+  own docs, so it installs anywhere unchanged.
 - **`quarkus-tooling`** — vendored third-party `quarkus` and `keycloak-administration`
-  skills, MIT-licensed (see `plugins/quarkus-tooling/ATTRIBUTION.md`). Previously
-  tracked per-project by a skill installer (`skills-lock.json` + `.agents/skills/` in
-  `demo`, with a source repo + content hash per skill) — that gave drift detection in
-  theory, but the actual installer CLI could never be confirmed running (silent no-op
-  in every environment tried), so the "reproducible install" property was already
-  theoretical. Vendoring here at least gets the "install once, every project" property
-  for real, same tradeoff `dev-guidelines` already made for its ciembor-sourced
-  content.
+  skills, MIT-licensed (see `plugins/quarkus-tooling/ATTRIBUTION.md`). Vendored rather
+  than pinned per project so that "install once, every project" holds for real — the
+  same tradeoff `dev-guidelines` makes for its ciembor-sourced content.
 
 ## Install
 
@@ -45,7 +36,6 @@ beyond Ingo.
 /plugin install epic-workflow@ingo-eng-guidelines
 /plugin install architecture@ingo-eng-guidelines
 /plugin install quarkus-tooling@ingo-eng-guidelines
-/plugin install quarkus-panache-smells@ingo-eng-guidelines   # private-repo-only, see above
 ```
 
 Team members repeat the same commands once; updates then arrive via `git pull` on the
@@ -67,9 +57,6 @@ plugins/
   quarkus-tooling/
     skills/<name>/SKILL.md
     ATTRIBUTION.md
-  quarkus-panache-smells/
-    skills/quarkus-panache-smells/SKILL.md
-    ATTRIBUTION.md            — restricted license, private-repo-only
 ```
 
 Adding a plugin: new folder under `plugins/`, its own `.claude-plugin/plugin.json`, and

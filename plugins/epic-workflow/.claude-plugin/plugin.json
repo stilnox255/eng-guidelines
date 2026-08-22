@@ -1,6 +1,6 @@
 {
   "name": "epic-workflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Idea capture through epic definition, planning, and task execution — GitHub Projects V2 sync included. Parameterized entirely via each project's own CLAUDE.md.",
   "author": {
     "name": "Ingo Schindler"

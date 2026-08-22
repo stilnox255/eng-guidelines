@@ -54,21 +54,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-## Not included here: `quarkus-panache-smells`
-
-Sourced from [emvnuel/skills](https://github.com/emvnuel/skills), path
-`quarkus-panache/SKILL.md`.
-
-That repo previously had no LICENSE file and no license mention anywhere in it, so
-under default copyright it granted no redistribution permission. The skill was kept
-out of this MIT-licensed plugin for that reason.
-
-**Resolved upstream on 2026-08-18:** the repo is now MIT-licensed, via PRs
-[#2](https://github.com/emvnuel/skills/pull/2) (add MIT License),
-[#3](https://github.com/emvnuel/skills/pull/3) (add Claude Code plugin manifest) and
-[#4](https://github.com/emvnuel/skills/pull/4) (use full name in the copyright
-notice), all merged by the author. The licensing blocker no longer applies, and the
-skill could be vendored here under the same terms as the rest of this plugin.
-
-That is a content decision, not a licensing one, and it has not been made yet.

@@ -5,7 +5,7 @@ description: Architecture and coding rules for long-running Java MicroProfile / 
 
 ## Related Skills
 - consult the `quarkus` skill for framework-specific guidance: REST, CDI/ArC, Hibernate ORM, Panache, configuration, OpenAPI, messaging, security (OIDC/JWT), observability, native/packaging, and tooling
-- consult the `quarkus-panache-smells` skill when writing or reviewing PanacheRepository code: N+1 queries, missing projections, pagination, eager fetching, unclosed streams
+- consult the `quarkus-panache-smells` skill when writing or reviewing PanacheRepository code (N+1 queries, missing projections, pagination, eager fetching, unclosed streams) — it ships in the recommended companion marketplace `skills@emvnuel-skills`, not in this one
 - apply both alongside the rules below; on conflict, the project rules in this skill take precedence
 
 ## Java Version & Syntax

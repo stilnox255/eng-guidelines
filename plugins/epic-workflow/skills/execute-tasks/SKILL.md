@@ -48,7 +48,7 @@ Always follow `backend` and `frontend` SKILL rules. TDD is mandated by `backend/
 
 | Task touches | Subagent MUST invoke |
 |---|---|
-| Panache entity/repository, `adapter.out.persistence.*` | `quarkus-panache-smells` |
+| Panache entity/repository, `adapter.out.persistence.*` | `quarkus-panache-smells` (companion marketplace `skills@emvnuel-skills`; skip if not installed) |
 | Any `adapter.in.*` or `adapter.out.*` (ports/adapters generally) | `quarkus` |
 
 Put the matching requirement in the dispatch briefing (Step 3) as an explicit instruction, not just a mention — same enforcement level as `requesting-code-review` above.
@@ -240,7 +240,7 @@ Only the orchestrator moves issue state and SESSION.md. Subagents only execute c
    - The TASKS.md *section* for the task (not the full file)
    - Acceptance criteria + tests required
    - The *specific* BCE layer rule(s) that apply (e.g. "JAX-RS Resource rules from `backend/SKILL.md`" — not the whole SKILL). Let the subagent load `backend`/`frontend` itself if it needs more.
-   - **Conditional required skill** — if the task touches a Panache entity/repository or `adapter.out.persistence.*`, explicit instruction: "invoke `quarkus-panache-smells` skill before finishing." If it touches `adapter.in.*`/`adapter.out.*`, explicit instruction: "invoke `quarkus` skill." See table above.
+   - **Conditional required skill** — if the task touches a Panache entity/repository or `adapter.out.persistence.*`, explicit instruction: "invoke `quarkus-panache-smells` skill before finishing" — that skill ships in the recommended companion marketplace `skills@emvnuel-skills`, not in this one, so skip the instruction if it is not installed. If it touches `adapter.in.*`/`adapter.out.*`, explicit instruction: "invoke `quarkus` skill." See table above.
    - Exact file paths to create / modify
    - TDD reminder: backend = mandatory failing test first, scoped per **Test Scope Policy** above — never a bare `./gradlew test`/`check`
    - **Commit footer:** the subagent's own worktree commits use a plain conventional-commit message only — no `Closes #NN` / `Epic: #YY` trailer. That footer is added exactly once, by the orchestrator, in Step 4 after the Review Gate returns Ready.
